@@ -1,3 +1,4 @@
+package amok;
 
 public class AmokVirtualPet {
 
@@ -5,6 +6,7 @@ public class AmokVirtualPet {
 	private int thirst = 6;
 	private int boredom = 6;
 	private int walk = 6;
+	private int cage = 0;
 	private String petName;
 	private String petDescription;
 //	 
@@ -16,13 +18,14 @@ public class AmokVirtualPet {
 		// default constructor - was invisible 
 	}
 	public AmokVirtualPet(String petNameParameter, String petDescriptionParameter, int hungerParameter, 
-			int thirstParameter, int boredomParameter, int walkParameter) {
+			int thirstParameter, int boredomParameter, int walkParameter, int cageParameter) {
 		this.petName = petNameParameter;
 		this.petDescription = petDescriptionParameter;
 		this.hunger = hungerParameter;
 		this.thirst = thirstParameter;
 		this.boredom = boredomParameter;
 		this.walk = walkParameter;
+		this.cage = cageParameter;
 	}
 	public AmokVirtualPet(int i, int j, int k, int l) {
 		// TODO Auto-generated constructor stub
@@ -30,6 +33,9 @@ public class AmokVirtualPet {
 	}
 	public int getWalk() {
 		return this.walk;
+	}
+	public int getCage() {
+		return this.cage;
 	}
 	public int getHunger() { //parent- protects the data by wrapping it in a method
 		return this.hunger;
@@ -54,6 +60,7 @@ public class AmokVirtualPet {
 		hunger--;
 		thirst--;
 		boredom--;
+		walk--;
 	}
 	public String getPetName() {
 		return this.petName;

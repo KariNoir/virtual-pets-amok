@@ -1,3 +1,4 @@
+package amok;
 
 public class AmokVirtualPetShelter {
 
