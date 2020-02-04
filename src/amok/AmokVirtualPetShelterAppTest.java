@@ -1,9 +1,13 @@
 package amok;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class AmokVirtualPetShelterAppTest {
+
+class AmokVirtualPetShelterAppTest<ShelterPet> {
 
 //	OLD STUFF
 //	Create a main method that…
@@ -34,17 +38,32 @@ class AmokVirtualPetShelterAppTest {
 //	clean dog cages
 //	clean the shelter litterbox
 //	oil all robotic pet
-	
-	AmokVirtualPet underTest = new AmokVirtualPet(); // calling default constructor
+
+	AmokVirtualPet underTest = new AmokVirtualPet(0, 0, 0, 0, 0); // calling default constructor
+	private Object pet1;
+
 	@Test
-	public void shouldWalkDog() {
+	public void shouldWalkPet() {
 		// act
-		int result = underTest.getWalk(); // makes a method in VP2 class
+		int result = underTest.getWalkAllDogs(); // makes a method in VP2 class
 		// assert
-		assertEquals(6, result);
+		assertEquals(6+1, result);
 	}
-}
-	
+
+	@Test
+	public void allPetsgetfed() {
+		int result = underTest.getFedAll();
+		assertEquals(6 + 1, result);
+	}
+
+
+@Test
+public void shouldBeAbleToAddPet() {
+	underTest.add(pet1);
+	Object retrievedPet = underTest.findPet("Thor");
+	assertThat(retrievedPet, is(pet1));
+}}
+
 //	@Test
 //	public void hungerShouldDecreaseBy1AfterEat() {
 //		// act
